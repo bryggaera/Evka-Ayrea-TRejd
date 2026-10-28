@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="mk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Евка Ауреа Трејд – трговија на големо и мало со материјали за пакување: стреч фолија, алуминиумска фолија, хартија за печење, кеси и садови за храна.">
+<title>Евка Ауреа Трејд</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+html{scroll-behavior:smooth}body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+section,#pocetok{scroll-margin-top:70px}
+/* Layout: широки ленти како намотки фолија; хоризонтални „ролни“ со технички спецификации */
+:root{
+  --bg:#f3f5f7; --surface:#ffffff; --ink:#14202b; --muted:#5a6876;
+  --line:#d7dde3; --steel:#1d3a52; --gold:#b8892b; --gold-soft:#f3e6c8;
+  --on-steel:#eef3f7;
+  --f-display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --f-body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --gut-l:max(16px,env(safe-area-inset-left,0px));
+  --gut-r:max(16px,env(safe-area-inset-right,0px));
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e161d; --surface:#15212b; --ink:#e7edf2; --muted:#9aa9b6;
+  --line:#26343f; --steel:#0a2233; --gold:#d9ab4f; --gold-soft:#3a2f17; --on-steel:#e7edf2; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e161d; --surface:#15212b; --ink:#e7edf2; --muted:#9aa9b6;
+  --line:#26343f; --steel:#0a2233; --gold:#d9ab4f; --gold-soft:#3a2f17; --on-steel:#e7edf2; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6}
+h1,h2,h3{font-family:var(--f-display);line-height:1.15;text-wrap:balance;margin:0}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding-left:var(--gut-l);padding-right:var(--gut-r)}
+.label{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+
+/* header */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--steel)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--steel);color:var(--on-steel)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand-mark{width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 50% 50%,var(--steel) 0 28%,var(--gold) 29% 100%);flex:none}
+.brand b{font-family:var(--f-display);font-size:15px;letter-spacing:.02em}
+.nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;font-size:14px;flex-wrap:wrap}
+.nav ul a{text-decoration:none;opacity:.85}
+.nav ul a:hover{opacity:1;color:var(--gold)}
+
+/* hero */
+.hero{background:var(--steel);color:var(--on-steel);padding-block:56px 64px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(30px,5vw,54px);font-weight:700;margin-top:14px}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p.lead{margin-top:20px;max-width:56ch;font-size:18px;opacity:.88}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:4px;font-weight:700;font-size:15px;text-decoration:none;border:2px solid transparent;cursor:pointer;font-family:var(--f-body)}
+.btn-gold{background:var(--gold);color:#1a1304}
+.btn-gold:hover{filter:brightness(1.08)}
+.btn-ghost{border-color:currentColor;color:var(--on-steel);background:transparent}
+.roll{position:relative;min-width:0}
+.roll svg{width:100%;height:auto;display:block;max-width:440px;margin-left:auto}
+.spec-tag{position:absolute;left:0;bottom:8%;background:var(--surface);color:var(--ink);font-family:var(--f-mono);font-size:12px;padding:10px 14px;border-left:3px solid var(--gold);box-shadow:0 8px 24px rgba(0,0,0,.25);line-height:1.5}
+.spec-tag strong{display:block;font-family:var(--f-body);font-size:13px}
+
+/* strip */
+.strip{border-bottom:1px solid var(--line);background:var(--surface)}
+.strip-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding-block:22px}
+.strip-row div{display:flex;flex-direction:column;gap:2px}
+.strip-row b{font-family:var(--f-display);font-size:20px;font-variant-numeric:tabular-nums}
+.strip-row span{font-size:14px;color:var(--muted)}
+
+section{padding-block:72px}
+.sec-head{display:flex;flex-direction:column;gap:10px;margin-bottom:36px;max-width:62ch}
+.sec-head h2{font-size:clamp(24px,3.4vw,36px)}
+.sec-head p{color:var(--muted)}
+
+/* products */
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.prod{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:24px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.prod-ico{width:48px;height:48px}
+.prod h3{font-size:18px}
+.prod p{color:var(--muted);font-size:15px}
+.specs{margin-top:auto;border-top:1px dashed var(--line);padding-top:12px;display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-family:var(--f-mono);font-size:12.5px}
+.specs dt{color:var(--muted)}
+.specs dd{margin:0;font-variant-numeric:tabular-nums}
+
+/* sales channels */
+.channels{background:var(--surface);border-block:1px solid var(--line)}
+.ch-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ch{padding:32px;border-radius:6px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.ch-whole{background:var(--steel);color:var(--on-steel)}
+.ch-retail{background:var(--gold-soft)}
+.ch h3{font-size:24px}
+.ch ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px}
+.ch .label{color:var(--gold)}
+.ch-retail .label{color:var(--ink);opacity:.7}
+
+/* sectors */
+.sectors{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.sector{border-top:3px solid var(--gold);padding-top:14px;display:flex;flex-direction:column;gap:6px}
+.sector b{font-size:16px}
+.sector span{color:var(--muted);font-size:14px}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:start}
+.info{display:flex;flex-direction:column;gap:18px}
+.info-row{display:flex;flex-direction:column;gap:2px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.info-row span{font-size:13px;color:var(--muted)}
+.info-row b{font-size:17px;user-select:all}
+.note{font-size:13px;color:var(--muted);background:var(--gold-soft);padding:10px 12px;border-radius:4px}
+form{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px;min-width:0}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field.full{grid-column:1/-1}
+label{font-size:13px;font-weight:600}
+input,select,textarea{font:inherit;font-size:15px;padding:11px 12px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink);width:100%}
+textarea{min-height:110px;resize:vertical}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg label{display:flex;align-items:center;gap:6px;font-weight:500;padding:9px 14px;border:1px solid var(--line);border-radius:4px;cursor:pointer;background:var(--bg)}
+.seg input{width:auto}
+.form-msg{grid-column:1/-1;font-size:14px;padding:12px;border-radius:4px;background:var(--gold-soft)}
+
+footer{background:var(--steel);color:var(--on-steel);padding-block:32px;font-size:14px}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;opacity:.85}
+
+@media (max-width:900px){
+  .hero-grid,.contact-grid,.ch-grid{grid-template-columns:1fr}
+  .products{grid-template-columns:1fr 1fr}
+  .sectors,.strip-row{grid-template-columns:1fr 1fr}
+  .roll svg{margin:0 auto;max-width:340px}
+}
+@media (max-width:560px){
+  .products,form{grid-template-columns:1fr}
+  .nav ul{gap:14px;font-size:13px}
+  section{padding-block:52px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .spin{transform-origin:220px 200px;animation:turn 30s linear infinite}
+  @keyframes turn{to{transform:rotate(360deg)}}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#pocetok"><span class="brand-mark" aria-hidden="true"></span><b>ЕВКА АУРЕА ТРЕЈД</b></a>
+    <nav aria-label="Главна навигација"><ul>
+      <li><a href="#proizvodi">Производи</a></li>
+      <li><a href="#prodazba">Големо и мало</a></li>
+      <li><a href="#korisnici">За кого</a></li>
+      <li><a href="#kontakt">Контакт</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main id="pocetok">
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="label">Трговија на големо и мало</span>
+      <h1>Материјали за пакување што <em>ја чуваат храната свежа</em></h1>
+      <p class="lead">Стреч фолии, алуминиумска фолија, хартија за печење и сè што е потребно за пакување на храна. Снабдуваме ресторани, пекарници, месарници, маркети и домаќинства.</p>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="#kontakt">Побарај понуда</a>
+        <a class="btn btn-ghost" href="#proizvodi">Види производи</a>
+      </div>
+    </div>
+    <div class="roll" aria-hidden="true">
+      <svg viewBox="0 0 440 400" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="film" x1="0" x2="1">
+            <stop offset="0" stop-color="#cfe0ec" stop-opacity=".25"/>
+            <stop offset=".5" stop-color="#ffffff" stop-opacity=".55"/>
+            <stop offset="1" stop-color="#cfe0ec" stop-opacity=".2"/>
+          </linearGradient>
+        </defs>
+        <path d="M60 200 L400 120 L400 360 L60 380 Z" fill="url(#film)" stroke="#e7eef4" stroke-opacity=".4"/>
+        <g class="spin">
+          <circle cx="220" cy="200" r="150" fill="#b8892b" opacity=".18"/>
+          <circle cx="220" cy="200" r="130" fill="none" stroke="#e7eef4" stroke-opacity=".5" stroke-width="2"/>
+          <circle cx="220" cy="200" r="110" fill="none" stroke="#e7eef4" stroke-opacity=".35" stroke-width="2"/>
+          <circle cx="220" cy="200" r="90" fill="none" stroke="#e7eef4" stroke-opacity=".25" stroke-width="2"/>
+          <circle cx="220" cy="200" r="70" fill="none" stroke="#e7eef4" stroke-opacity=".18" stroke-width="2"/>
+          <circle cx="220" cy="200" r="44" fill="#b8892b"/>
+          <circle cx="220" cy="200" r="26" fill="#1d3a52"/>
+        </g>
+      </svg>
+      <div class="spec-tag"><strong>Стреч фолија за храна</strong>9 µm · 300 mm · 300 m</div>
+    </div>
+  </div>
+</div>
+
+<div class="strip">
+  <div class="wrap strip-row">
+    <div><b>6</b><span>групи производи</span></div>
+    <div><b>9–23 µm</b><span>дебелини на фолија</span></div>
+    <div><b>Пакет / Палета</b><span>продажба на мало и големо</span></div>
+    <div><b>Брза</b><span>испорака низ Македонија</span></div>
+  </div>
+</div>
+
+<section id="proizvodi">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Асортиман</span>
+      <h2>Производи</h2>
+      <p>Сите материјали за контакт со храна се во согласност со важечките стандарди. Димензиите подолу се најчести формати; други по нарачка.</p>
+    </div>
+    <div class="products">
+      <article class="prod">
+        <svg class="prod-ico" viewBox="0 0 48 48" aria-hidden="true"><circle cx="20" cy="24" r="14" fill="none" stroke="var(--gold)" stroke-width="3"/><circle cx="20" cy="24" r="5" fill="var(--gold)"/><path d="M34 24h10" stroke="var(--gold)" stroke-width="3"/></svg>
+        <h3>Стреч фолија за храна</h3>
+        <p>Проѕирна фолија за завиткување месо, сирење, овошје и готови јадења. Се лепи сама за себе и за садот.</p>
+        <dl class="specs"><dt>Дебелина</dt><dd>9 – 12 µm</dd><dt>Ширина</dt><dd>300 / 450 mm</dd><dt>Должина</dt><dd>300 – 1500 m</dd></dl>
+      </article>
+      <article class="prod">
+        <svg class="prod-ico" viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="10" width="36" height="28" rx="3" fill="none" stroke="var(--gold)" stroke-width="3"/><path d="M6 20h36M18 10v28" stroke="var(--gold)" stroke-width="3"/></svg>
+        <h3>Индустриска стреч фолија</h3>
+        <p>За обмотување палети и транспортни пратки. Рачна и машинска изведба.</p>
+        <dl class="specs"><dt>Дебелина</dt><dd>17 – 23 µm</dd><dt>Ширина</dt><dd>500 mm</dd><dt>Тежина</dt><dd>2,2 – 16 kg</dd></dl>
+      </article>
+      <article class="prod">
+        <svg class="prod-ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 14l16-6 16 6v20l-16 6-16-6z" fill="none" stroke="var(--gold)" stroke-width="3"/><path d="M8 14l16 6 16-6M24 20v20" stroke="var(--gold)" stroke-width="3"/></svg>
+        <h3>Алуминиумска фолија</h3>
+        <p>За печење, скара и чување на храна. Домашни ролни и професионални формати за кујни.</p>
+        <dl class="specs"><dt>Дебелина</dt><dd>10 – 14 µm</dd><dt>Ширина</dt><dd>290 / 450 mm</dd><dt>Должина</dt><dd>10 – 150 m</dd></dl>
+      </article>
+      <article class="prod">
+        <svg class="prod-ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 36V12h26l6 6v18z" fill="none" stroke="var(--gold)" stroke-width="3"/><path d="M14 22h20M14 29h14" stroke="var(--gold)" stroke-width="3"/></svg>
+        <h3>Хартија за печење</h3>
+        <p>Силиконизирана хартија отпорна на топлина. Ролни и сечени листови за тепсии.</p>
+        <dl class="specs"><dt>Отпорност</dt><dd>до 220 °C</dd><dt>Ролна</dt><dd>38 cm × 8 – 50 m</dd><dt>Листови</dt><dd>40 × 60 cm</dd></dl>
+      </article>
+      <article class="prod">
+        <svg class="prod-ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M12 16h24l-3 24H15z" fill="none" stroke="var(--gold)" stroke-width="3"/><path d="M18 16c0-5 3-8 6-8s6 3 6 8" fill="none" stroke="var(--gold)" stroke-width="3"/></svg>
+        <h3>Кеси и вреќи</h3>
+        <p>Кеси за замрзнување, вакуум кеси, хартиени кеси за пекарници и кеси за отпад.</p>
+        <dl class="specs"><dt>Тип</dt><dd>ПЕ, хартија, вакуум</dd><dt>Големини</dt><dd>1 – 120 L</dd><dt>Пакување</dt><dd>ролна / пакет</dd></dl>
+      </article>
+      <article class="prod">
+        <svg class="prod-ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 20h36l-4 18H10z" fill="none" stroke="var(--gold)" stroke-width="3"/><path d="M10 20l4-8h20l4 8" fill="none" stroke="var(--gold)" stroke-width="3"/></svg>
+        <h3>Садови за храна</h3>
+        <p>Алуминиумски тасови, кутии за храна за носење, чаши и прибор за еднократна употреба.</p>
+        <dl class="specs"><dt>Материјал</dt><dd>Al, PP, картон</dd><dt>Капацитет</dt><dd>250 – 2500 ml</dd><dt>Со капак</dt><dd>да / не</dd></dl>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="prodazba" class="channels">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Начин на продажба</span>
+      <h2>Купувајте на големо или на мало</h2>
+    </div>
+    <div class="ch-grid">
+      <div class="ch ch-whole">
+        <span class="label">За фирми</span>
+        <h3>Големопродажба</h3>
+        <ul>
+          <li>Цени по количина, на пакет и на палета</li>
+          <li>Договор за редовна испорака</li>
+          <li>Фактура и одложено плаќање за постојани клиенти</li>
+          <li>Посебни димензии и брендирање по нарачка</li>
+        </ul>
+        <div><a class="btn btn-gold" href="#kontakt">Побарај ценовник</a></div>
+      </div>
+      <div class="ch ch-retail">
+        <span class="label">За домаќинства и мали бизниси</span>
+        <h3>Малопродажба</h3>
+        <ul>
+          <li>Купување и на една ролна или пакет</li>
+          <li>Домашни формати фолија и хартија за печење</li>
+          <li>Совет за вистинскиот материјал за вашата намена</li>
+          <li>Подигање во продавница или достава</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="korisnici">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Со кого работиме</span>
+      <h2>За кого е нашиот асортиман</h2>
+    </div>
+    <div class="sectors">
+      <div class="sector"><b>Ресторани и кетеринг</b><span>Фолии, тасови и кутии за храна за носење</span></div>
+      <div class="sector"><b>Пекарници и слаткарници</b><span>Хартија за печење, хартиени кеси, кутии</span></div>
+      <div class="sector"><b>Месарници и маркети</b><span>Стреч фолија за храна, вакуум кеси</span></div>
+      <div class="sector"><b>Магацини и логистика</b><span>Индустриска стреч фолија за палети</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" class="channels">
+  <div class="wrap contact-grid">
+    <div class="info">
+      <div class="sec-head" style="margin-bottom:8px">
+        <span class="label">Контакт</span>
+        <h2>Побарајте понуда</h2>
+        <p>Кажете ни што ви треба и во која количина. Одговараме во текот на работниот ден.</p>
+      </div>
+      <div class="info-row"><span>Телефон</span><b>+389 7X XXX XXX</b></div>
+      <div class="info-row"><span>Е-пошта</span><b>info@evkaaurea.mk</b></div>
+      <div class="info-row"><span>Адреса</span><b>ул. ______ бр. __, Скопје</b></div>
+      <div class="info-row"><span>Работно време</span><b>Пон – Пет 08–17 · Саб 08–14</b></div>
+      <p class="note">Телефонот, е-поштата и адресата се примерни. Заменете ги со вистинските податоци на фирмата.</p>
+    </div>
+    <form id="inquiry" novalidate>
+      <div class="field"><label for="f-name">Име и презиме</label><input id="f-name" name="name" required autocomplete="name"></div>
+      <div class="field"><label for="f-company">Фирма (опционално)</label><input id="f-company" name="company" autocomplete="organization"></div>
+      <div class="field"><label for="f-phone">Телефон</label><input id="f-phone" name="phone" type="tel" required autocomplete="tel"></div>
+      <div class="field"><label for="f-email">Е-пошта</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
+      <div class="field full">
+        <span style="font-size:13px;font-weight:600">Тип на купување</span>
+        <div class="seg">
+          <label><input type="radio" id="f-t1" name="type" value="големо" checked> На големо</label>
+          <label><input type="radio" id="f-t2" name="type" value="мало"> На мало</label>
+        </div>
+      </div>
+      <div class="field full"><label for="f-product">Производ</label>
+        <select id="f-product" name="product">
+          <option>Стреч фолија за храна</option><option>Индустриска стреч фолија</option>
+          <option>Алуминиумска фолија</option><option>Хартија за печење</option>
+          <option>Кеси и вреќи</option><option>Садови за храна</option><option>Повеќе производи</option>
+        </select></div>
+      <div class="field full"><label for="f-msg">Количина и забелешка</label><textarea id="f-msg" name="msg" placeholder="пр. 20 ролни стреч фолија 300 mm, месечно"></textarea></div>
+      <div class="field full"><button class="btn btn-gold" type="submit">Испрати барање</button></div>
+      <p class="form-msg" id="form-msg" hidden></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Евка Ауреа Трејд ДООЕЛ · Материјали за пакување</span>
+    <span>Трговија на големо и мало</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('inquiry').addEventListener('submit',function(e){
+  e.preventDefault();
+  var msg=document.getElementById('form-msg');
+  var name=document.getElementById('f-name').value.trim();
+  var phone=document.getElementById('f-phone').value.trim();
+  if(!name||!phone){msg.textContent='Внесете име и телефон за да можеме да ве контактираме.';msg.hidden=false;return;}
+  msg.textContent='Ви благодариме, '+name+'. Ова е преглед на страницата: формата сè уште не е поврзана со е-пошта. На вистинската страница барањето ќе стигне до нас.';
+  msg.hidden=false;
+});
+</script>
+
+</body>
+</html>
